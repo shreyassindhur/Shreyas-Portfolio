@@ -83,8 +83,8 @@ export default function Hero() {
           </div>
           <div className="w-px h-8 bg-white/5" />
           <div>
-            <span className="block text-2xl font-bold text-[#E2E2E2] tracking-tighter">5 mo</span>
-            <span className="text-[#444] text-xs uppercase tracking-widest mt-1 block">Industry</span>
+            <span className="block text-2xl font-bold text-[#E2E2E2] tracking-tighter">5 months</span>
+            <span className="text-[#444] text-xs uppercase tracking-widest mt-1 block">Industry experience</span>
           </div>
         </motion.div>
 
