@@ -6,7 +6,7 @@ import Experience from './components/Experience'
 import Projects from './components/Projects'
 import Certifications from './components/Certifications'
 import Ticker from './components/Ticker'
-import Contact from './components/Contacts'
+import Contact from './components/Contact'
 import Footer from './components/Footer'
 
 function Cursor() {
