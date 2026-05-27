@@ -10,7 +10,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="px-8 md:px-20 lg:px-32 py-24 border-t border-white/5">
+    <section id="projects" className="px-8 md:px-20 lg:px-32 py-24">
 
       <p className="text-[#7D9E8C] text-xs uppercase tracking-widest font-medium mb-4">Projects</p>
       <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tighter mb-16 leading-tight">

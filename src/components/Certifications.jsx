@@ -44,7 +44,7 @@ const groups = [
 
 export default function Certifications() {
   return (
-    <section id="certifications" className="px-8 md:px-20 lg:px-32 py-24 border-t border-white/5">
+    <section id="certifications" className="px-8 md:px-20 lg:px-32 py-24">
 
       <p className="text-[#7D9E8C] text-xs uppercase tracking-widest font-medium mb-4">Certifications</p>
       <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tighter mb-16 leading-tight">

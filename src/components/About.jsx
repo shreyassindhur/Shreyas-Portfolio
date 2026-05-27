@@ -11,7 +11,7 @@ const skills = [
 
 export default function About() {
   return (
-    <section id="about" className="px-8 md:px-20 lg:px-32 py-24 border-t border-white/5">
+    <section id="about" className="px-8 md:px-20 lg:px-32 py-24">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
 
         <motion.div
@@ -23,8 +23,8 @@ export default function About() {
         >
           <p className="text-[#7D9E8C] text-xs uppercase tracking-widest font-medium mb-6">About</p>
           <h2 className="font-display text-4xl md:text-5xl font-bold leading-tight tracking-tighter mb-8">
-            Building things that<br />
-            <span className="italic text-[#444]">hold up under scrutiny.</span>
+            Focused on technology that earns<br />
+            <span className="italic text-[#444]">relevance through usefulness.</span>
           </h2>
           <div className="space-y-4 text-[#666] text-sm leading-relaxed">
             <p>
