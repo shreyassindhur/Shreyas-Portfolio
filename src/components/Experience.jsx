@@ -15,19 +15,19 @@ const experiences = [
 ]
 
 const education = [
-  { institution: 'Ramrao Adik Institute of Technology, D.Y. Patil University, Nerul', degree: 'B.Tech Computer Engineering · Minor in Data Science', duration: '2022 – Present', meta: '8.25 / 10' },
+  { institution: 'RAIT, D.Y. Patil University', degree: 'B.Tech Computer Engineering · Minor in Data Science', duration: '2022 – Present', meta: '8.25 / 10' },
   { institution: 'Royal Junior College, Dombivli', degree: '12th Grade', duration: '2020 – 2022', meta: '75.5%' },
-  { institution: 'Omkar English Medium School, Dombivli', degree: '10th Grade', duration: '2008 – 2020', meta: '79.2%' },
+  { institution: 'Omkar English Medium School', degree: '10th Grade', duration: '2008 – 2020', meta: '79.2%' },
 ]
 
 export default function Experience() {
   return (
     <section id="experience" className="px-8 md:px-20 lg:px-32 py-24 border-t border-white/5">
 
-      <p className="text-[#C9983A] text-xs uppercase tracking-widest font-medium mb-4">Experience</p>
+      <p className="text-[#7D9E8C] text-xs uppercase tracking-widest font-medium mb-4">Experience</p>
       <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tighter mb-16 leading-tight">
         Where I've worked<br />
-        <span className="italic text-[#555]">and studied.</span>
+        <span className="italic text-[#444]">and studied.</span>
       </h2>
 
       {experiences.map((exp) => (
@@ -40,15 +40,15 @@ export default function Experience() {
           className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16"
         >
           <div className="lg:col-span-3">
-            <h3 className="text-[#F0EDE6] font-semibold text-base">{exp.company}</h3>
-            <p className="text-[#C9983A] text-xs mt-1">{exp.role}</p>
-            <p className="text-[#444] text-xs mt-2">{exp.duration}</p>
+            <h3 className="text-[#E2E2E2] font-semibold text-base">{exp.company}</h3>
+            <p className="text-[#7D9E8C] text-xs mt-1">{exp.role}</p>
+            <p className="text-[#333] text-xs mt-2">{exp.duration}</p>
           </div>
           <div className="lg:col-span-9">
             <ul className="space-y-3">
               {exp.points.map((point, i) => (
-                <li key={i} className="flex gap-4 text-[#888580] text-sm leading-relaxed">
-                  <span className="text-[#C9983A]/60 mt-1 flex-shrink-0 text-xs">—</span>
+                <li key={i} className="flex gap-4 text-[#666] text-sm leading-relaxed">
+                  <span className="text-[#7D9E8C]/60 mt-1 flex-shrink-0 text-xs">—</span>
                   {point}
                 </li>
               ))}
@@ -58,7 +58,7 @@ export default function Experience() {
       ))}
 
       <div className="border-t border-white/5 pt-12">
-        <p className="text-[#444] text-xs uppercase tracking-widest mb-6">Education</p>
+        <p className="text-[#333] text-xs uppercase tracking-widest mb-6">Education</p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {education.map((edu, i) => (
             <motion.div
@@ -70,10 +70,10 @@ export default function Experience() {
               className="border border-white/5 hover:border-white/10 rounded-xl p-6 transition-colors duration-200"
             >
               <div className="flex justify-between items-start gap-4 mb-2">
-                <h3 className="text-[#F0EDE6] text-sm font-medium leading-snug">{edu.institution}</h3>
-                <span className="text-[#C9983A] font-semibold text-sm whitespace-nowrap">{edu.meta}</span>
+                <h3 className="text-[#E2E2E2] text-sm font-medium leading-snug">{edu.institution}</h3>
+                <span className="text-[#7D9E8C] font-semibold text-sm whitespace-nowrap">{edu.meta}</span>
               </div>
-              <p className="text-[#555] text-xs">{edu.degree}</p>
+              <p className="text-[#444] text-xs">{edu.degree}</p>
               <p className="text-[#333] text-xs mt-1">{edu.duration}</p>
             </motion.div>
           ))}

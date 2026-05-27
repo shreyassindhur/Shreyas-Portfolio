@@ -12,7 +12,7 @@ export default function Projects() {
   return (
     <section id="projects" className="px-8 md:px-20 lg:px-32 py-24 border-t border-white/5">
 
-      <p className="text-[#C9983A] text-xs uppercase tracking-widest font-medium mb-4">Projects</p>
+      <p className="text-[#7D9E8C] text-xs uppercase tracking-widest font-medium mb-4">Projects</p>
       <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tighter mb-16 leading-tight">
         Things I've built.
       </h2>
@@ -31,13 +31,13 @@ export default function Projects() {
               <span className="text-[#333] text-xs font-mono">{project.year}</span>
             </div>
             <div className="lg:col-span-3 flex items-start gap-3">
-              <h3 className="text-[#F0EDE6] font-medium text-sm group-hover:text-[#C9983A] transition-colors duration-200">{project.name}</h3>
+              <h3 className="text-[#E2E2E2] font-medium text-sm group-hover:text-[#7D9E8C] transition-colors duration-200">{project.name}</h3>
               {!project.solo && (
-                <span className="text-[#444] text-xs border border-white/10 px-2 py-0.5 rounded-full whitespace-nowrap">collab</span>
+                <span className="text-[#333] text-xs border border-white/10 px-2 py-0.5 rounded-full whitespace-nowrap">collab</span>
               )}
             </div>
             <div className="lg:col-span-5">
-              <p className="text-[#888580] text-sm leading-relaxed">{project.desc}</p>
+              <p className="text-[#666] text-sm leading-relaxed">{project.desc}</p>
             </div>
             <div className="lg:col-span-3 flex flex-wrap gap-2 items-start">
               {project.stack.map(tech => (
