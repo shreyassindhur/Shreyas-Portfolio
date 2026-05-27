@@ -47,6 +47,7 @@ export default function App() {
         <Ticker />
         <About />
         <Experience />
+        <Ticker />
         <Projects />
         <Certifications />
         <Contact />
