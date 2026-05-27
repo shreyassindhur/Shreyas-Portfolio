@@ -37,8 +37,9 @@ export default function Contact() {
             <span className="group-hover:translate-x-1 transition-transform duration-200">↗</span>
           </a>
           <div className="flex items-center gap-8 mt-8">
-            <a href="https://www.linkedin.com/in/shreyas-sindhur-993b7a308/" target="_blank" rel="noreferrer" className="text-[#333] hover:text-[#E2E2E2] text-xs uppercase tracking-widest transition-colors duration-200">LinkedIn</a>
-            <a href="https://github.com/shreyassindhur" target="_blank" rel="noreferrer" className="text-[#333] hover:text-[#E2E2E2] text-xs uppercase tracking-widest transition-colors duration-200">GitHub</a>
+            <a href="https://www.linkedin.com/in/shreyas-sindhur-993b7a308/" target="_blank" rel="noreferrer" className="text-[#555] hover:text-[#E2E2E2] text-xs uppercase tracking-widest transition-colors duration-200">LinkedIn</a>
+            <a href="https://github.com/shreyassindhur" target="_blank" rel="noreferrer" className="text-[#555] hover:text-[#E2E2E2] text-xs uppercase tracking-widest transition-colors duration-200">GitHub</a>
+            <a href="https://medium.com/@shreyassindhur" target="_blank" rel="noreferrer" className="text-[#555] hover:text-[#E2E2E2] text-xs uppercase tracking-widest transition-colors duration-200">Medium</a>
           </div>
         </motion.div>
 

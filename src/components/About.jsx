@@ -31,10 +31,10 @@ export default function About() {
               I study Computer Engineering at RAIT, D.Y. Patil University with a minor in Data Science. I'm drawn to problems where the evaluation matters as much as the solution.
             </p>
             <p>
-              At <span className="text-[#E2E2E2]">MachineMax</span>, I built a pipeline to predict machine failures from sensor data. A big part of that work was catching a 3–4% inflation in results caused by a flawed validation setup — and fixing it before anything was presented.
+              At <span className="text-[#E2E2E2]">MachineMax</span>, I built a pipeline to predict machine failures from sensor data. A big part of that work was catching a 3–4% inflation in results caused by a flawed validation setup  and fixing it before anything was presented.
             </p>
             <p>
-              Outside of tech, I write stories, shoot photos, and am genuinely passionate about filmmaking. At college, I served as <span className="text-[#E2E2E2]">Digital Marketing Head at Social Wing RAIT</span> — managing social media, photographing events, and leading digital promotions. I've also volunteered with <span className="text-[#E2E2E2]">NSS</span>.
+              Outside of tech, I write stories, shoot photos, and am genuinely passionate about filmmaking. At college, I served as <span className="text-[#E2E2E2]">Digital Marketing Head at Social Wing RAIT</span> , managing social media, photographing events, and leading digital promotions. I publish short stories and essays on <a href="https://medium.com/@shreyassindhur" target="_blank" rel="noreferrer" className="text-[#E2E2E2] border-b border-white/20 hover:border-[#7D9E8C] hover:text-[#7D9E8C] transition-colors duration-200">Medium</a>. I've also volunteered with <span className="text-[#E2E2E2]">National Service Scheme(NSS)</span>.
             </p>
           </div>
         </motion.div>

@@ -6,10 +6,10 @@ const experiences = [
     role: 'Data Science Intern · Remote',
     duration: 'Jan – May 2026',
     points: [
-      'Built an end-to-end pipeline predicting machine failures within a 7-day horizon using sensor data — temperature, vibration, oil pressure, fault codes.',
+      'Built an end-to-end pipeline predicting machine failures within a 7-day horizon using sensor data like  temperature, vibration, oil pressure, fault codes.',
       'Caught and fixed a flawed validation setup inflating results by 3–4%. Applied GroupKFold to ensure no machine appeared in both train and test sets.',
-      'Engineered domain-informed features — stress index, fault severity ratio, service overdue flag. Top model drivers aligned with physical domain logic.',
-      'Chose PR-AUC over ROC-AUC as the primary metric — correct given severe class imbalance and a low failure rate.',
+      'Engineered domain-informed features like stress index, fault severity ratio, service overdue flag. Top model drivers aligned with physical domain logic.',
+      'Chose PR-AUC over ROC-AUC as the primary metric correctly, given severe class imbalance and a low failure rate.',
     ],
   },
 ]
