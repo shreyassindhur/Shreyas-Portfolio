@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion'
 
 const projects = [
-  { name: 'Distill', year: '2026', desc: 'AI research assistant with a custom orchestrator-subagent architecture. Searches 5–10 real-time sources, synthesises, and exports structured reports. No frameworks — built from scratch in Python.', stack: ['Python', 'Groq API', 'Streamlit'], solo: true },
-  { name: 'Safe-Surf', year: '2025', desc: 'Phishing URL detection combining a Deep Neural Network and XGBoost. FastAPI backend serving real-time predictions with security reports covering SSL validity, domain age, and risk indicators.', stack: ['React.js', 'FastAPI', 'TensorFlow', 'XGBoost'], solo: true },
-  { name: 'HealthGuard', year: '2025', desc: 'Disease prediction from user-selected symptoms using a trained MLP. Evaluated MLP, CNN, and LSTM — chose MLP for its accuracy and low compute cost.', stack: ['Python', 'TensorFlow', 'Keras', 'Streamlit'], solo: true },
-  { name: 'Titanic Survival Analysis', year: '2026', desc: 'End-to-end ML pipeline across 4 classifiers with full EDA and feature engineering. Applied SHAP summary, waterfall, and dependence plots to explain model decisions.', stack: ['XGBoost', 'Scikit-learn', 'SHAP', 'Pandas'], solo: true },
-  { name: 'CrimeRate AI', year: '2025', desc: 'Predicts and compares crime rates across major Indian cities using a regression model trained on historical data. Adjusts for population growth and classifies risk levels.', stack: ['Flask', 'Scikit-learn', 'Chart.js', 'TailwindCSS'], solo: false },
+  { name: 'Distill', year: '2026', desc: 'AI research assistant with a custom orchestrator-subagent architecture. Searches 5–10 real-time sources, synthesises, and exports structured reports. No frameworks — built from scratch in Python.', stack: ['Python', 'Groq API', 'Streamlit'], solo: true, link: 'https://distill.streamlit.app/' },
+  { name: 'Safe-Surf', year: '2025', desc: 'Phishing URL detection combining a Deep Neural Network and XGBoost. FastAPI backend serving real-time predictions with security reports covering SSL validity, domain age, and risk indicators.', stack: ['React.js', 'FastAPI', 'TensorFlow', 'XGBoost'], solo: false, link: 'https://safesurf.streamlit.app/' },
+  { name: 'HealthGuard', year: '2025', desc: 'Disease prediction from user-selected symptoms using a trained MLP. Evaluated MLP, CNN, and LSTM — chose MLP for its accuracy and low compute cost.', stack: ['Python', 'TensorFlow', 'Keras', 'Streamlit'], solo: false, link: 'https://health-guardai.streamlit.app/' },
+  { name: 'Titanic Survival Analysis', year: '2026', desc: 'End-to-end ML pipeline across 4 classifiers with full EDA and feature engineering. Applied SHAP summary, waterfall, and dependence plots to explain model decisions.', stack: ['XGBoost', 'Scikit-learn', 'SHAP', 'Pandas'], solo: true, link: 'https://colab.research.google.com/drive/1x-bQ0L2uF6-5_wDBxo7y607F2ULGM01i?usp=sharing' },
+  { name: 'CrimeRate AI', year: '2025', desc: 'Predicts and compares crime rates across major Indian cities using a regression model trained on historical data. Adjusts for population growth and classifies risk levels.', stack: ['Flask', 'Scikit-learn', 'Chart.js', 'TailwindCSS'], solo: false, link: 'https://crimerate-ai.onrender.com/' },
+  { name: 'Global Layoffs Analysis', year: '2025', desc: 'Analyzed a real-world global layoffs dataset using MySQL — cleaning, standardizing, and transforming raw data. Used window functions and CTEs to remove duplicates, handle nulls, and uncover trends across industries, countries, and time periods.', stack: ['MySQL', 'SQL'], solo: true, link: 'https://github.com/shreyassindhur/global-layoffs-data-analysis' },
 ]
 
 export default function Projects() {
@@ -19,7 +20,10 @@ export default function Projects() {
 
       <div className="flex flex-col divide-y divide-white/5">
         {projects.map((project, i) => (
-          <motion.div
+          <motion.a
+            href={project.link}
+            target="_blank"
+            rel="noreferrer"
             key={project.name}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -28,23 +32,26 @@ export default function Projects() {
             className="group grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 py-8 hover:bg-white/[0.015] transition-colors duration-200 rounded-xl px-4 -mx-4"
           >
             <div className="lg:col-span-1 pt-0.5">
-              <span className="text-[#333] text-xs font-mono">{project.year}</span>
+              <span className="text-[#555] text-xs font-mono">{project.year}</span>
             </div>
             <div className="lg:col-span-3 flex items-start gap-3">
               <h3 className="text-[#E2E2E2] font-medium text-sm group-hover:text-[#7D9E8C] transition-colors duration-200">{project.name}</h3>
               {!project.solo && (
-                <span className="text-[#333] text-xs border border-white/10 px-2 py-0.5 rounded-full whitespace-nowrap">collab</span>
+                <span className="text-[#555] text-xs border border-white/10 px-2 py-0.5 rounded-full whitespace-nowrap">collab</span>
               )}
             </div>
             <div className="lg:col-span-5">
-              <p className="text-[#666] text-sm leading-relaxed">{project.desc}</p>
+              <p className="text-[#999] text-sm leading-relaxed">{project.desc}</p>
             </div>
-            <div className="lg:col-span-3 flex flex-wrap gap-2 items-start">
+            <div className="lg:col-span-2 flex flex-wrap gap-2 items-start">
               {project.stack.map(tech => (
-                <span key={tech} className="text-[#444] text-xs bg-white/[0.03] border border-white/5 px-2 py-1 rounded-md">{tech}</span>
+                <span key={tech} className="text-[#555] text-xs bg-white/[0.03] border border-white/5 px-2 py-1 rounded-md">{tech}</span>
               ))}
             </div>
-          </motion.div>
+            <div className="lg:col-span-1 flex items-start justify-end pt-0.5">
+              <span className="text-[#555] group-hover:text-[#7D9E8C] text-xs transition-colors duration-200">↗</span>
+            </div>
+          </motion.a>
         ))}
       </div>
 
