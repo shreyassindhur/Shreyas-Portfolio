@@ -46,7 +46,7 @@ export default function Certifications() {
   return (
     <section id="certifications" className="px-8 md:px-20 lg:px-32 py-24 border-t border-white/5">
 
-      <p className="text-[#C9983A] text-xs uppercase tracking-widest font-medium mb-4">Certifications</p>
+      <p className="text-[#7D9E8C] text-xs uppercase tracking-widest font-medium mb-4">Certifications</p>
       <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tighter mb-16 leading-tight">
         Verified credentials.
       </h2>
@@ -63,10 +63,10 @@ export default function Certifications() {
           >
             {/* Issuer */}
             <div className="lg:col-span-3 flex items-start gap-3 pt-0.5">
-              <span className="text-[#C9983A] text-xs font-mono mt-0.5">
+              <span className="text-[#7D9E8C] text-xs font-mono mt-0.5">
                 {String(gi + 1).padStart(2, '0')}
               </span>
-              <span className="text-[#E8E4DC] text-sm font-medium">{group.issuer}</span>
+              <span className="text-[#E2E2E2] text-sm font-medium">{group.issuer}</span>
             </div>
 
             {/* Certs */}
@@ -77,12 +77,12 @@ export default function Certifications() {
                   href={cert.link}
                   target="_blank"
                   rel="noreferrer"
-                  className="group/cert flex items-center gap-2 border border-white/5 hover:border-[#C9983A]/30 bg-white/[0.02] hover:bg-white/[0.04] rounded-lg px-4 py-2.5 transition-all duration-200"
+                  className="group/cert flex items-center gap-2 border border-white/5 hover:border-[#7D9E8C]/30 bg-white/[0.02] hover:bg-white/[0.04] rounded-lg px-4 py-2.5 transition-all duration-200"
                 >
-                  <span className="text-[#888580] text-xs group-hover/cert:text-[#E8E4DC] transition-colors duration-200">
+                  <span className="text-[#888580] text-xs group-hover/cert:text-[#E2E2E2] transition-colors duration-200">
                     {cert.name}
                   </span>
-                  <span className="text-[#333] text-xs group-hover/cert:text-[#C9983A] transition-colors duration-200">↗</span>
+                  <span className="text-[#333] text-xs group-hover/cert:text-[#7D9E8C] transition-colors duration-200">↗</span>
                 </a>
               ))}
             </div>
