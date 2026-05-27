@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;700&display=swap');
+
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-ticker {
+  animation: ticker 30s linear infinite;
+}
+
+:root {
+  --background: #020203;
+  --surface: #09090c;
+  --surface-elevated: #101014;
+
+  --border: rgba(255, 255, 255, 0.04);
+
+  --text-primary: #e5e5e5;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+
+  --accent: #8b5cf6;
+  --accent-hover: #a78bfa;
+
+  --selection: rgba(139, 92, 246, 0.16);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(139, 92, 246, 0.06),
+      transparent 30%
+    ),
+    #020203;
+
+  color: var(--text-primary);
+
+  font-family: 'DM Sans', system-ui, sans-serif;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  letter-spacing: -0.01em;
+}
+
+.font-display {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--selection);
+  color: white;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+/* Links */
+a {
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* Typography polish */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+p {
+  line-height: 1.75;
+  color: var(--text-secondary);
+}
+
+/* Images */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Cleaner focus states */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid rgba(139, 92, 246, 0.45);
+  outline-offset: 4px;
+  border-radius: 10px;
+}
+
+/* Optional subtle glow */
+.soft-glow {
+  box-shadow:
+    0 0 40px rgba(139, 92, 246, 0.08),
+    0 0 80px rgba(139, 92, 246, 0.04);
+}
+
+/* Smooth section transitions */
+section {
+  position: relative;
+}
+
+/* Optional glass surface utility */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Subtle elevated card feel */
+.surface {
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+/* Better text rendering on dark backgrounds */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
