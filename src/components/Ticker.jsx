@@ -7,8 +7,8 @@ const items = [
 export default function Ticker() {
   return (
     <div className="py-3 overflow-hidden relative">
-      <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#0D0D0D] to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#0D0D0D] to-transparent z-10 pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#080808] to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#080808] to-transparent z-10 pointer-events-none" />
       <div className="flex animate-ticker whitespace-nowrap">
         {[...items, ...items].map((item, i) => (
           <span key={i} className="inline-flex items-center gap-4 mx-4 text-[#2A2A2A] text-xs uppercase tracking-widest font-medium">
