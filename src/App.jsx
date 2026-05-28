@@ -100,7 +100,7 @@ function Cursor() {
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#080808] text-[#E2E2E2] font-body">
+    <div className="min-h-screen bg-[#050505] text-[#E2E2E2] font-body">
       <Cursor />
       <Navbar />
       <main>
