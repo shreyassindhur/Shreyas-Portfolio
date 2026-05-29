@@ -8,6 +8,7 @@ import Certifications from './components/Certifications'
 import Ticker from './components/Ticker'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import EasterEgg from './components/EasterEgg'
 
 function Cursor() {
   const dot = useRef(null)
@@ -102,6 +103,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#050505] text-[#E2E2E2] font-body">
       <Cursor />
+      <EasterEgg />
       <Navbar />
       <main>
         <Hero />
