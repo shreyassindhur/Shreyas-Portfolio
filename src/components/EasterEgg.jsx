@@ -1,27 +1,34 @@
 import { useEffect, useState } from 'react'
 
 const lines = [
-  { text: '> accessing classified files...', delay: 0 },
-  { text: '> identity confirmed: Shreyas Sindhur', delay: 600 },
-  { text: '> scanning interests...', delay: 1200 },
-  { text: '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', delay: 1800 },
-  { text: '✦ Dreams of standing under Iceland\'s aurora', delay: 2200 },
-  { text: '✦ Currently writing a short film', delay: 2800 },
-  { text: '✦ Fascinated by aviation & how things fly', delay: 3400 },
-  { text: '✦ Reads about new places before sleeping', delay: 4000 },
-  { text: '✦ Believes evaluation > model choice', delay: 4600 },
-  { text: '✦ Writes stories no one has read yet', delay: 5200 },
-  { text: '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', delay: 5800 },
-  { text: '> end of file. you found this. nice.', delay: 6200 },
+  { text: 'hey, you actually typed my name.', delay: 0, style: 'muted' },
+  { text: 'here\'s what the resume doesn\'t say —', delay: 800, style: 'muted' },
+  { text: '🏔  iceland is on my bucket list. aurora or bust.', delay: 1800, style: 'highlight' },
+  { text: '✈  aviation genuinely fascinates me. i read about it for fun.', delay: 2700, style: 'highlight' },
+  { text: '🎬  i\'m working on a short film. slowly. carefully.', delay: 3600, style: 'highlight' },
+  { text: '📖  i write stories no one has read yet. maybe someday.', delay: 4500, style: 'highlight' },
+  { text: '🌊  i think going really deep into anything is the point.', delay: 5400, style: 'highlight' },
+  { text: '🤫  not many people find this. glad you did.', delay: 6400, style: 'accent' },
 ]
 
 export default function EasterEgg() {
   const [visible, setVisible] = useState(false)
   const [visibleLines, setVisibleLines] = useState([])
   const [typed, setTyped] = useState('')
+  const [closing, setClosing] = useState(false)
+
+  const close = () => {
+    setClosing(true)
+    setTimeout(() => {
+      setVisible(false)
+      setVisibleLines([])
+      setClosing(false)
+    }, 400)
+  }
 
   useEffect(() => {
     const onKey = (e) => {
+      if (e.key === 'Escape') { close(); return }
       setTyped(prev => {
         const next = (prev + e.key).slice(-7)
         if (next.toLowerCase() === 'shreyas') {
@@ -39,80 +46,115 @@ export default function EasterEgg() {
     if (!visible) return
     const timers = lines.map((line, i) =>
       setTimeout(() => {
-        setVisibleLines(prev => [...prev, line.text])
+        setVisibleLines(prev => [...prev, { text: line.text, style: line.style }])
       }, line.delay)
     )
     return () => timers.forEach(clearTimeout)
   }, [visible])
 
-  useEffect(() => {
-    const onEsc = (e) => {
-      if (e.key === 'Escape') {
-        setVisible(false)
-        setVisibleLines([])
-      }
-    }
-    window.addEventListener('keydown', onEsc)
-    return () => window.removeEventListener('keydown', onEsc)
-  }, [])
-
   if (!visible) return null
 
   return (
     <div
-      className="fixed inset-0 z-[9999] flex items-center justify-center"
-      style={{ background: 'rgba(2, 13, 18, 0.92)', backdropFilter: 'blur(8px)' }}
-      onClick={() => { setVisible(false); setVisibleLines([]) }}
+      className="fixed inset-0 z-[9999] flex items-center justify-center px-6"
+      style={{
+        background: 'rgba(2, 13, 18, 0.85)',
+        backdropFilter: 'blur(12px)',
+        opacity: closing ? 0 : 1,
+        transition: 'opacity 0.4s ease',
+      }}
+      onClick={close}
     >
       <div
-        className="relative max-w-lg w-full mx-8"
+        className="relative max-w-md w-full"
+        style={{
+          transform: closing ? 'translateY(20px)' : 'translateY(0)',
+          transition: 'transform 0.4s ease',
+        }}
         onClick={e => e.stopPropagation()}
       >
-        {/* Terminal window */}
-        <div className="bg-[#0A0A0A] border border-white/10 rounded-2xl overflow-hidden">
-          {/* Title bar */}
-          <div className="flex items-center gap-2 px-4 py-3 border-b border-white/5">
-            <span className="w-3 h-3 rounded-full bg-red-500/60" />
-            <span className="w-3 h-3 rounded-full bg-yellow-500/60" />
-            <span className="w-3 h-3 rounded-full bg-emerald-500/60" />
-            <span className="text-[#444] text-xs ml-2 font-mono">classified.sh</span>
-            <button
-              onClick={() => { setVisible(false); setVisibleLines([]) }}
-              className="ml-auto text-[#444] hover:text-[#E2E2E2] text-xs transition-colors duration-200"
-            >
-              esc to close
-            </button>
-          </div>
+        {/* Card */}
+        <div
+          className="rounded-3xl overflow-hidden"
+          style={{
+            background: 'rgba(255,255,255,0.03)',
+            border: '1px solid rgba(255,255,255,0.07)',
+            boxShadow: '0 40px 80px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.05)',
+          }}
+        >
+          {/* Top accent line */}
+          <div style={{ height: '2px', background: 'linear-gradient(90deg, transparent, #7D9E8C, transparent)' }} />
 
-          {/* Terminal content */}
-          <div className="p-6 font-mono text-sm space-y-2 min-h-48">
+          <div className="px-8 py-10 space-y-1">
             {visibleLines.map((line, i) => (
-              <p
+              <div
                 key={i}
-                className={
-                  line.startsWith('✦')
-                    ? 'text-[#7D9E8C]'
-                    : line.startsWith('━')
-                    ? 'text-[#222]'
-                    : line.includes('confirmed')
-                    ? 'text-[#E2E2E2]'
-                    : line.includes('end of file')
-                    ? 'text-[#7D9E8C]'
-                    : 'text-[#555]'
-                }
+                style={{
+                  animation: 'fadeSlideUp 0.5s ease both',
+                }}
               >
-                {line}
-              </p>
+                <p
+                  className={`text-sm leading-relaxed ${
+                    line.style === 'highlight'
+                      ? 'text-[#C8D8D0]'
+                      : line.style === 'accent'
+                      ? 'text-[#7D9E8C]'
+                      : 'text-[#555]'
+                  }`}
+                  style={{
+                    fontFamily: line.style === 'muted' ? 'monospace' : 'inherit',
+                    fontSize: line.style === 'muted' ? '11px' : '14px',
+                    letterSpacing: line.style === 'muted' ? '0.05em' : '0',
+                    paddingTop: i === 2 ? '16px' : '0',
+                    paddingBottom: i === lines.length - 1 ? '0' : '0',
+                  }}
+                >
+                  {line.text}
+                </p>
+              </div>
             ))}
+
             {visibleLines.length < lines.length && (
-              <span className="text-[#7D9E8C] animate-pulse">▋</span>
+              <span
+                className="inline-block w-1 h-4 ml-1"
+                style={{
+                  background: '#7D9E8C',
+                  animation: 'blink 1s step-end infinite',
+                  verticalAlign: 'middle',
+                }}
+              />
             )}
           </div>
+
+          {/* Bottom */}
+          {visibleLines.length === lines.length && (
+            <div
+              className="px-8 pb-8 flex justify-between items-center"
+              style={{ animation: 'fadeSlideUp 0.5s ease both' }}
+            >
+              <span className="text-[#333] text-xs">— S</span>
+              <button
+                onClick={close}
+                className="text-[#444] hover:text-[#7D9E8C] text-xs transition-colors duration-200"
+                style={{ fontFamily: 'monospace', letterSpacing: '0.05em' }}
+              >
+                esc
+              </button>
+            </div>
+          )}
         </div>
-        <p className="text-center text-[#333] text-xs mt-4 font-mono">
-          click outside or press esc to close
-        </p>
       </div>
+
+      <style>{`
+        @keyframes fadeSlideUp {
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes blink {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0; }
+        }
+      `}</style>
     </div>
   )
 }
